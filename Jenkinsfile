@@ -35,7 +35,7 @@ pipeline {
                     git config --global user.name "daoducan88"
                     git config --global user.email "daoducan88@gmail.com"
                     git add deployment.yaml
-                    git commit -a "Updated Deployment Manifest"
+                    git commit -a 'Updated Deployment Manifest'
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
                     sh "git push https://github.com/daoducan/gitops-test-ci-cd-pipeline main"
