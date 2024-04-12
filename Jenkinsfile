@@ -28,31 +28,17 @@ pipeline {
                 """
             }
         }
-/*
+
         stage("Push the changed deployment file to Git") {
             steps {
                 sh """
-                    git config --global user.name "daoducan88"
-                    git config --global user.email "daoducan88@gmail.com"
+                    git config --global user.name "daoducan"
+                    git config --global user.email "daoducan1991@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
                     sh "git push https://github.com/daoducan/gitops-test-ci-cd-pipeline main"
-                }
-            }
-        }*/
-
-        stage("Push the changed deployment file to Git") {
-            steps {
-                withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
-                    sh """
-                        git config --global user.name "daoducan"
-                        git config --global user.email "daoducan1991@gmail.com"
-                        git add deployment.yaml
-                        git commit -m "Updated Deployment Manifest"
-                        git push https://github.com/daoducan/gitops-test-ci-cd-pipeline main
-                    """
                 }
             }
         }
