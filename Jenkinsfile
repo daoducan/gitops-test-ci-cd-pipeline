@@ -15,7 +15,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/daoducan/gitops-test-ci-cd-pipeline'
+                git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/daoducan/gitops-test-ci-cd-pipeline'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
-                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
                     sh "git push https://github.com/daoducan/gitops-test-ci-cd-pipeline main"
                 }
             }
