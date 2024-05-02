@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: complete-production-e2e-deployment
+  name: test-ci-cd-pipeline
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: complete-production-e2e-app
+      app: test-ci-cd-pipeline
   template:
     metadata:
       labels:
-        app: complete-production-e2e-app
+        app: test-ci-cd-pipeline
     spec:
       containers:
-        - name: complete-production-e2e-app
-          image: daoducan88/complete-prodcution-e2e-pipeline:1.0.0-11
+        - name: test-ci-cd-pipeline
+          image: daoducan88/test-ci-cd-pipeline:1.0.1-4
           resources:
             limits:
               memory: "256Mi"
