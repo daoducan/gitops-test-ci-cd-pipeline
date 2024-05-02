@@ -15,7 +15,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/daoducan/gitops-test-ci-cd-pipeline'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/daoducan/gitops-test-ci-cd-pipeline'
             }
         }
 
