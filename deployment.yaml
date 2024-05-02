@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-ci-cd-pipeline:1.0.1-6
+  name: test-ci-cd-pipeline:1.0.1-7
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: test-ci-cd-pipeline:1.0.1-6
+      app: test-ci-cd-pipeline:1.0.1-7
   template:
     metadata:
       labels:
-        app: test-ci-cd-pipeline:1.0.1-6
+        app: test-ci-cd-pipeline:1.0.1-7
     spec:
       containers:
-        - name: test-ci-cd-pipeline:1.0.1-6
-          image: daoducan88/test-ci-cd-pipeline:1.0.1-6
+        - name: test-ci-cd-pipeline:1.0.1-7
+          image: daoducan88/test-ci-cd-pipeline:1.0.1-7
           resources:
             limits:
               memory: "256Mi"
