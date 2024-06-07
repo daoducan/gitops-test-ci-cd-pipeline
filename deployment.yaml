@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cicd-pipeline-container
-          image: daoducan88/test-ci-cd-pipeline:1.0.1.9
+          image: daoducan88/test-ci-cd-pipeline:1.0.1.7
           resources:
             limits:
               memory: "256Mi"
